@@ -1,0 +1,19 @@
+<div class="card-list">
+  <h2>{{title}}</h2>
+
+  <div *ngIf="(items$ | async) as items">
+
+    <mat-card
+      cdkDropList
+      #dropList="cdkDropList"
+      [cdkDropListData]="items"
+      (cdkDropListDropped)="onDrop($event)"
+      class="list">
+
+      <app-card-summary *ngFor="let item of items" [title]="item.title" [description]="item.description"></app-card-summary>
+
+    </mat-card>
+
+  </div>
+
+</div>

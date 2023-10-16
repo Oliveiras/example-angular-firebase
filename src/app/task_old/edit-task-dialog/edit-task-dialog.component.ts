@@ -1,17 +1,17 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { Task } from '../task/task';
+import { Task } from '../task';
 
 @Component({
   selector: 'app-task-dialog',
-  templateUrl: './task-dialog.component.html',
-  styleUrls: ['./task-dialog.component.css'],
+  templateUrl: './edit-task-dialog.component.html',
+  styleUrls: ['./edit-task-dialog.component.css'],
 })
-export class TaskDialogComponent {
+export class EditTaskDialogComponent {
   private backupTask: Partial<Task> = { ...this.data.task };
 
   constructor(
-    public dialogRef: MatDialogRef<TaskDialogComponent>,
+    public dialogRef: MatDialogRef<EditTaskDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: TaskDialogData
   ) {}
 
@@ -20,7 +20,7 @@ export class TaskDialogComponent {
     this.data.task.description = this.backupTask.description;
     this.dialogRef.close(this.data);
   }
-} 
+}
 
 export interface TaskDialogData {
   task: Partial<Task>;
