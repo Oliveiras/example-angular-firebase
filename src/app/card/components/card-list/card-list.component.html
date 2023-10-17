@@ -10,7 +10,7 @@
       (cdkDropListDropped)="onDrop($event)"
       class="list">
 
-      <app-card-summary *ngFor="let item of items" [title]="item.title" [description]="item.description"></app-card-summary>
+      <app-card-summary cdkDrag *ngFor="let item of items" [title]="item.title" [description]="item.description"></app-card-summary>
 
     </mat-card>
 

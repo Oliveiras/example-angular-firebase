@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {Observable} from "rxjs";
 import {Card} from "../../models/card";
-import {CdkDragDrop} from "@angular/cdk/drag-drop";
+import {CdkDragDrop, moveItemInArray} from "@angular/cdk/drag-drop";
 
 @Component({
   selector: 'app-card-list',
@@ -13,7 +13,7 @@ export class CardListComponent {
   @Input() title = '';
   @Input() items$!: Observable<Card[]>;
 
-  onDrop($event: CdkDragDrop<Card[], any>) {
-
+  onDrop(event: CdkDragDrop<Card[], any>) {
+    moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
   }
 }

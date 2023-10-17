@@ -1,15 +1,13 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {TitlebarComponent} from './titlebar/titlebar.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
+import {TitlebarComponent} from "../core/components/titlebar/titlebar.component";
 
 
 @NgModule({
   declarations: [
-    TitlebarComponent
   ],
   exports: [
-    TitlebarComponent
   ],
   imports: [
     CommonModule,

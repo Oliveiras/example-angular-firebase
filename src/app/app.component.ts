@@ -1,4 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, NgZone, OnDestroy, OnInit} from '@angular/core';
+import {Auth} from "@angular/fire/auth";
+import {Router} from "@angular/router";
+import {firebase, firebaseui} from "firebaseui-angular";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,6 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+
 
 }

@@ -5,7 +5,7 @@ import { CardRoutingModule } from './card-routing.module';
 import { CardSummaryComponent } from './components/card-summary/card-summary.component';
 import {MatCardModule} from "@angular/material/card";
 import { CardListComponent } from './components/card-list/card-list.component';
-import {CdkDropList} from "@angular/cdk/drag-drop";
+import {CdkDrag, CdkDropList} from "@angular/cdk/drag-drop";
 
 
 @NgModule({
@@ -21,7 +21,8 @@ import {CdkDropList} from "@angular/cdk/drag-drop";
     CommonModule,
     CardRoutingModule,
     MatCardModule,
-    CdkDropList
+    CdkDropList,
+    CdkDrag
   ]
 })
 export class CardModule { }

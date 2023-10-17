@@ -1,0 +1,9 @@
+<div *ngIf="(loggedUser$ | async) as loggedUser; else notLogged">
+  {{loggedUser.nickname}}
+</div>
+
+<ng-template #notLogged>
+  <button mat-raised-button (click)="onSignIn()">Sign In</button>
+</ng-template>
+
+<div id="firebaseui-auth-container" style="width: 1px; height: 1px"></div>

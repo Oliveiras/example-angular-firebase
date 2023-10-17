@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {Observable, of} from "rxjs";
-import {Card} from "../../card/models/card";
+import {Card} from "../../../card/models/card";
 
 @Component({
   selector: 'app-board-list',

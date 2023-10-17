@@ -13,7 +13,10 @@ import {getStorage, provideStorage} from '@angular/fire/storage';
 import {AppRoutingModule} from './app-routing.module';
 import {SharedModule} from "./shared/shared.module";
 import {TitleStrategy} from "@angular/router";
-import {MyTitleStrategy} from "./core/my-title-strategy";
+import {MyTitleStrategy} from "./core/providers/my-title-strategy";
+import {FirebaseUIModule} from "firebaseui-angular";
+import {CoreModule} from "./core/core.module";
+import {firebaseUiAuthConfig} from "./core/config/firebase-ui-config";
 
 
 @NgModule({
@@ -29,8 +32,10 @@ import {MyTitleStrategy} from "./core/my-title-strategy";
     provideStorage(() => getStorage()),
     provideAnalytics(() => getAnalytics()),
     providePerformance(() => getPerformance()),
+    FirebaseUIModule.forRoot(firebaseUiAuthConfig),
+    CoreModule,
+    SharedModule,
     AppRoutingModule,
-    SharedModule
   ],
   providers: [
     ScreenTrackingService,
